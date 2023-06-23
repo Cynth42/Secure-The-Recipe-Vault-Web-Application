@@ -1,0 +1,27 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+
+VPC Default Security Group:
+Make sure that the default security group of every VPC restricts all traffic
+The VPC's default security group allow ingress and egress traffic
+
+WebApp Security Group:
+security group allow ingress from 0.0.0.0/0 to port 22
+security group allow ingress from 0.0.0.0/0 to port 3389
+
+Attack Instance - C3:
+EC2 instances is not managed by AWS Systems manager
+
+CloudTrail is not specified on the S3 buckets
+S3 bucket logging is not enabled
+
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+If no security is specified when a EC2 instance is launched, the instance will be assigned to a default security group.  Therefore, it is highly recommended that the default security group restrict all traffic to prevent unauthorized use of the resources.
+Security Groups which are stateful, are a set of network control rules that can be applied at the instance or resource level. Also, it's a second layer and by far the most utilized tool to restrict traffic to and from your cloud hosts and instances. It provides filtering of Ingress(In-bound network traffic that is entering your cloud environment from the outside) and Egress(Out-bound network traffic that is leaving your cloud environment) network traffic to AWS resources.   According to the documentation, it is recommended that no security group allows unrestricted ingress access on port 3389 and on port 22.
+It is also recomended to use the AWS System Manager to manage and access EC2 instances.
+A CloudTrail that is stored on Amazon S3 bucket should be created.
+S3 bucket login should be enabled
+
+
+

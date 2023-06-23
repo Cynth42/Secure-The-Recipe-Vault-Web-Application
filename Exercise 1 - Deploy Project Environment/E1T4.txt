@@ -1,0 +1,11 @@
+Task 4: Identify Bad Practices:
+
+
+# Poor practice 1
+All of the S3 buckets that were uploaded into the AWS console do not have server-side encryption enabled, and they have block public access disabled. No S3 Bucket Policies which is used to restrict and control access was created. The contents of the buckets have to be encrypted to prevent unauthorized people from accessing and viewing them, and to avoid compromising the entire security of the AWS infrastructure. 
+
+# Poor practice 2
+There were no VPC Endpoints used.  This allows you to block requests that do not originate from your VPC network. Also, bucket Object Versioning was disabled making it easy for infiltrators to corrupt or delete data.
+
+
+

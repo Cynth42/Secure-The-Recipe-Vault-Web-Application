@@ -1,0 +1,39 @@
+
+Task 2 - Tools and Documentation:
+
+
+a. Scan infrastructure as code templates:
+
+Checkov is a static code analysis tool for infrastructure-as-code.
+
+It scans cloud infrastructure provisioned using Terraform, Terraform plan, Cloudformation, AWS SAM, Kubernetes, Helm charts,Kustomize, Dockerfile, Serverless or ARM Templates and detects security and compliance misconfigurations using graph-based scanning.
+
+Checkov also powers Bridgecrew, the developer-first platform that codifies and streamlines cloud security throughout the development lifecycle. Bridgecrew identifies, fixes, and prevents misconfigurations in cloud resources and infrastructure-as-code files.
+
+
+Example of vulnerability:
+
+1. Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+2. Ensure No security groups allow ingress from 0.0.0.0:0 to port 22
+3. Ensure All data stored in the S3 bucket is securely encrypted
+4. Ensure CloudTrail logs are encrypted at rest using KMS CMKs
+
+b. Scan AMI's or containers for OS vulnerabilities:
+
+The Anchore Engine is an open-source project that provides a centralized service for inspection, analysis, and certification of container images. The Anchore Engine is provided as a Docker container image that can be run standalone or within an orchestration platform such as Kubernetes, Docker Swarm, Rancher, Amazon ECS, and other container orchestration platforms.
+
+Example of vulnerability:
+
+Vulnerability ID: CVE-2019-14697
+Package: mus-1.1.22.r2
+Severity Fix: High 1.122-r3
+Vulnerability URL: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+
+c. Scan an AWS environment for cloud configuration vulnerabilities:
+
+AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources. Config continuously monitors and records your AWS resource configurations and allows you to automate the evaluation of recorded configurations against desired configurations.
+
+Example of vulnerability:
+
+S3-bucket-server-side-encryption-enabled checks that Amazon S3 bucket either has S3 default encryption enabled. 
+

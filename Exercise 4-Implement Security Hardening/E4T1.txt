@@ -1,0 +1,24 @@
+
+Task 1 - Remediation plan
+
+As a Cloud Architect, you have been asked to apply security best practices to the environment so that it can withstand attacks and be more secure.
+
+Identify 2-3 changes that can be made to our environment to prevent an SSH brute force attack from the internet.
+
+1. Change:
+Making good use of the AWS Systems Manager's Session Manager Service to access the application server instead of using public-private key based authentication process to prevent an SSH brute force attack from the internet.
+
+2. Change:
+Restrict the IPs that are allowed to communicate to the application server b providing CIDR block or exact IP address to prevent anyone from attempting to login to the application server on port 22.
+
+Neither instance should have had access to the secret recipes bucket; even in the instance that API credentials was compromised how could we have prevented access to sensitive data?
+
+By using least privileged access model:
+Instance role policy should not allow S3 buckets to be accessible from the application server.  Instead of this, policy should define the specific bucket for an example secret recipe to be accessible from the application server. This policy would prevent access to sensitive data.
+
+Restricting actions in the policy:
+The S3 buckets should not be allowed to a role example delete, update.  The policy should require only read permission to get the recipe from the bucket. The actions should be restricted to what is needed.
+
+Advance protection methods:
+Server side encryption should be enable in the S3 bucket.
+

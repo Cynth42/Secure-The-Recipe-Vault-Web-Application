@@ -1,0 +1,20 @@
+
+Task 4: Questions and Analysis
+
+1. What additional architectural change can be made to reduce the internet-facing attack surface of the web application instance.
+
+-An additional architectural change that can be made is to log into the web instances through the AWS Systems Manager. This will prevent all external access to the instances. in addition, block all ports to the internet in the EC2 instances.
+
+2. Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+
+-No creating VPC private endpoints alone would not prevent unauthorized access to the secrets bucket.  The IAM permissions for the S3 bucket has to also be secured.
+
+3. Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+
+-No applying default encryption setting to the s3 buckets will not encrypt the data that already exists.  The existing files has to be encrypted before enabling encryption.
+ 
+
+4. The changes you made above were done through the console or CLI; describe the outcome if the original cloud formation templates are applied to this environment?
+
+-if the original cloud formation templates are applied to the environment, all the previous security risks that were identified and remediated would returned-putting the app back to its original state,  Therefore all changes should be done in the cloud formation templates. 
+
